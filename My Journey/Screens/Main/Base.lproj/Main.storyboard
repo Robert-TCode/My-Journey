@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n3r-wl-5dp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MapTrackingViewController-->
+        <scene sceneID="zky-1e-6Nl">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MapTracking" storyboardName="MapTracking" referencedIdentifier="MapTrackingViewController" id="MJg-jX-Qbp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="baseline_map" id="OPN-UF-2zs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAo-qe-koJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="-208"/>
+        </scene>
+        <!--JourneysViewController-->
+        <scene sceneID="XSF-7r-PHh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Journeys" storyboardName="Journeys" referencedIdentifier="JourneysViewController" id="r2U-ER-BZc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Journeys" image="baseline_list" id="a8O-F5-0gL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sR6-P8-skd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="294"/>
+        </scene>
+        <!--Main Tab Controller-->
+        <scene sceneID="STP-C9-nqn">
+            <objects>
+                <tabBarController id="n3r-wl-5dp" customClass="MainTabController" customModule="My_Journey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="o5Y-yr-fAi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MJg-jX-Qbp" kind="relationship" relationship="viewControllers" id="lAA-2F-O9k"/>
+                        <segue destination="r2U-ER-BZc" kind="relationship" relationship="viewControllers" id="I0g-3L-1d9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfL-ED-TbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="baseline_list" width="18" height="18"/>
+        <image name="baseline_map" width="18" height="18"/>
+    </resources>
+</document>

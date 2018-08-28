@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		620B28572135DB0C00F8D6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28562135DB0C00F8D6F4 /* AppDelegate.swift */; };
-		620B28592135DB0C00F8D6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28582135DB0C00F8D6F4 /* ViewController.swift */; };
+		620B28592135DB0C00F8D6F4 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28582135DB0C00F8D6F4 /* MainTabController.swift */; };
 		620B285C2135DB0C00F8D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B285A2135DB0C00F8D6F4 /* Main.storyboard */; };
 		620B285E2135DB0D00F8D6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620B285D2135DB0D00F8D6F4 /* Assets.xcassets */; };
 		620B28612135DB0D00F8D6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B285F2135DB0D00F8D6F4 /* LaunchScreen.storyboard */; };
+		620B286D2135DF4900F8D6F4 /* MapTracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B286C2135DF4900F8D6F4 /* MapTracking.storyboard */; };
+		620B286F2135DFFB00F8D6F4 /* Journeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */; };
+		620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28742135E33E00F8D6F4 /* MapTrackingViewController.swift */; };
+		620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28762135E34F00F8D6F4 /* JourneysViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		620B28532135DB0C00F8D6F4 /* My Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		620B28562135DB0C00F8D6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		620B28582135DB0C00F8D6F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		620B28582135DB0C00F8D6F4 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		620B285B2135DB0C00F8D6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		620B285D2135DB0D00F8D6F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		620B28602135DB0D00F8D6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		620B28622135DB0D00F8D6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		620B286C2135DF4900F8D6F4 /* MapTracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapTracking.storyboard; sourceTree = "<group>"; };
+		620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journeys.storyboard; sourceTree = "<group>"; };
+		620B28742135E33E00F8D6F4 /* MapTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewController.swift; sourceTree = "<group>"; };
+		620B28762135E34F00F8D6F4 /* JourneysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,74 @@
 		620B28552135DB0C00F8D6F4 /* My Journey */ = {
 			isa = PBXGroup;
 			children = (
-				620B28562135DB0C00F8D6F4 /* AppDelegate.swift */,
-				620B28582135DB0C00F8D6F4 /* ViewController.swift */,
-				620B285A2135DB0C00F8D6F4 /* Main.storyboard */,
-				620B285D2135DB0D00F8D6F4 /* Assets.xcassets */,
-				620B285F2135DB0D00F8D6F4 /* LaunchScreen.storyboard */,
 				620B28622135DB0D00F8D6F4 /* Info.plist */,
+				620B28692135DB9800F8D6F4 /* Core */,
+				620B286A2135DBAC00F8D6F4 /* Screens */,
+				620B286B2135DBB400F8D6F4 /* Resources */,
 			);
 			path = "My Journey";
+			sourceTree = "<group>";
+		};
+		620B28692135DB9800F8D6F4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				620B28562135DB0C00F8D6F4 /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		620B286A2135DBAC00F8D6F4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				620B28702135E02F00F8D6F4 /* Launchscreen */,
+				620B28712135E27A00F8D6F4 /* Main */,
+				620B28722135E28300F8D6F4 /* Map */,
+				620B28732135E28B00F8D6F4 /* Journeys */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		620B286B2135DBB400F8D6F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				620B285D2135DB0D00F8D6F4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		620B28702135E02F00F8D6F4 /* Launchscreen */ = {
+			isa = PBXGroup;
+			children = (
+				620B285F2135DB0D00F8D6F4 /* LaunchScreen.storyboard */,
+			);
+			path = Launchscreen;
+			sourceTree = "<group>";
+		};
+		620B28712135E27A00F8D6F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				620B28582135DB0C00F8D6F4 /* MainTabController.swift */,
+				620B285A2135DB0C00F8D6F4 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		620B28722135E28300F8D6F4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				620B286C2135DF4900F8D6F4 /* MapTracking.storyboard */,
+				620B28742135E33E00F8D6F4 /* MapTrackingViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		620B28732135E28B00F8D6F4 /* Journeys */ = {
+			isa = PBXGroup;
+			children = (
+				620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */,
+				620B28762135E34F00F8D6F4 /* JourneysViewController.swift */,
+			);
+			path = Journeys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +192,8 @@
 			files = (
 				620B28612135DB0D00F8D6F4 /* LaunchScreen.storyboard in Resources */,
 				620B285E2135DB0D00F8D6F4 /* Assets.xcassets in Resources */,
+				620B286D2135DF4900F8D6F4 /* MapTracking.storyboard in Resources */,
+				620B286F2135DFFB00F8D6F4 /* Journeys.storyboard in Resources */,
 				620B285C2135DB0C00F8D6F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				620B28592135DB0C00F8D6F4 /* ViewController.swift in Sources */,
+				620B28592135DB0C00F8D6F4 /* MainTabController.swift in Sources */,
+				620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */,
+				620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */,
 				620B28572135DB0C00F8D6F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

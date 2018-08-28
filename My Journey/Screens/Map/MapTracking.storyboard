@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Tracking View Controller-->
+        <scene sceneID="sCP-i0-KvY">
+            <objects>
+                <viewController storyboardIdentifier="MapTrackingViewController" id="vOI-nO-YHZ" customClass="MapTrackingViewController" customModule="My_Journey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lvX-eY-hed">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mSn-qA-F84">
+                                <rect key="frame" x="0.0" y="89" width="375" height="578"/>
+                            </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Dc-5U-4L7">
+                                <rect key="frame" x="311" y="38" width="51" height="31"/>
+                                <connections>
+                                    <action selector="didChangeTrackingValue:" destination="vOI-nO-YHZ" eventType="valueChanged" id="VSb-ph-GTt"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2K-EE-7Zh">
+                                <rect key="frame" x="15" y="40" width="81" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mSn-qA-F84" firstAttribute="top" secondItem="2Dc-5U-4L7" secondAttribute="bottom" constant="20" id="386-gk-u2I"/>
+                            <constraint firstItem="mSn-qA-F84" firstAttribute="bottom" secondItem="vz8-ZI-V5G" secondAttribute="bottom" id="6qc-SN-vA5"/>
+                            <constraint firstItem="F2K-EE-7Zh" firstAttribute="top" secondItem="vz8-ZI-V5G" secondAttribute="top" constant="20" id="Oyu-JJ-68f"/>
+                            <constraint firstItem="mSn-qA-F84" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" id="PJh-nb-u8d"/>
+                            <constraint firstItem="mSn-qA-F84" firstAttribute="trailing" secondItem="vz8-ZI-V5G" secondAttribute="trailing" id="TSG-Kp-RQ7"/>
+                            <constraint firstItem="vz8-ZI-V5G" firstAttribute="trailing" secondItem="2Dc-5U-4L7" secondAttribute="trailing" constant="15" id="Tlr-U1-GgZ"/>
+                            <constraint firstItem="2Dc-5U-4L7" firstAttribute="centerY" secondItem="F2K-EE-7Zh" secondAttribute="centerY" id="eUQ-tw-C84"/>
+                            <constraint firstItem="F2K-EE-7Zh" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" constant="15" id="pud-Aj-BAW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vz8-ZI-V5G"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapKitView" destination="mSn-qA-F84" id="kxV-PR-OcM"/>
+                        <outlet property="trackingSwitch" destination="2Dc-5U-4L7" id="87x-yF-JL0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7g-tq-4hA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="115.59220389805098"/>
+        </scene>
+    </scenes>
+</document>
