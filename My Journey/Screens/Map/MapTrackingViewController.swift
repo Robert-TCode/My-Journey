@@ -16,17 +16,28 @@ class MapTrackingViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var mapKitView: MKMapView!
 
+    let creater = JourneyCreater()
+
     var coordinatesArray = [CLLocationCoordinate2D]()
+    var startTimestamp: Double = 0
+    var endTimestamp: Double = 0
+    var distance: Double = 0 {
+        didSet {
+            let truncatedNumber = String(format: "%.2f", distance / 100.0)
+            distanceLabel.text = "\(truncatedNumber) mi"
+        }
+    }
 
     var tracking: Bool = true {
         didSet {
             if tracking {
                 locationManager.startUpdatingLocation()
+                startTimestamp = Date().timeIntervalSince1970
             } else {
                 locationManager.stopUpdatingLocation()
                 oldCoordinates = nil
-                // save the journey
-                coordinatesArray.removeAll()
+                endTimestamp = Date().timeIntervalSince1970
+                saveJourney()
             }
         }
     }
@@ -34,12 +45,6 @@ class MapTrackingViewController: UIViewController {
     var locationManager = CLLocationManager()
     private let regionRadius: CLLocationDistance = 100
     var oldCoordinates: CLLocationCoordinate2D?
-    var distance: Double = 0 {
-        didSet {
-            let truncatedNumber = String(format: "%.2f", distance / 100.0)
-            distanceLabel.text = "\(truncatedNumber) mi"
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +59,7 @@ class MapTrackingViewController: UIViewController {
         checkLocationServiceAuthenticationStatus()
     }
 
-    func checkLocationServiceAuthenticationStatus() {
+    private func checkLocationServiceAuthenticationStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapKitView.showsUserLocation = true
             locationManager.startUpdatingLocation()
@@ -64,14 +69,14 @@ class MapTrackingViewController: UIViewController {
         }
     }
 
-    func zoomOn(location: CLLocation) {
+    private func zoomOn(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 3.0,
                                                                   regionRadius * 3.0)
         mapKitView.setRegion(coordinateRegion, animated: true)
     }
 
-    func drawOnMap() {
+    private func drawOnMap() {
         guard let source = oldCoordinates,
             let destination = locationManager.location?.coordinate else {
                 return
@@ -90,6 +95,24 @@ class MapTrackingViewController: UIViewController {
             coordinatesArray.append(source)
         }
         coordinatesArray.append(destination)
+    }
+
+    private func saveJourney() {
+        let coordinates = coordinatesArray.map {
+            Coordinates(uuid: UUID().uuidString,
+                        latitude: $0.latitude,
+                        longitude: $0.longitude)
+        }
+        let duration = endTimestamp - startTimestamp
+        let journey = Journey(uuid: UUID().uuidString,
+                              date: Date().timeIntervalSince1970,
+                              duration: duration,
+                              totalDistance: distance,
+                              coorinatesArray: coordinates)
+        creater.createJourney(journey) { }
+
+        coordinatesArray.removeAll()
+        distance = 0
     }
 }
 

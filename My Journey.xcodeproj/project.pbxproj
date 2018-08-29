@@ -16,6 +16,14 @@
 		620B286F2135DFFB00F8D6F4 /* Journeys.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */; };
 		620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28742135E33E00F8D6F4 /* MapTrackingViewController.swift */; };
 		620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28762135E34F00F8D6F4 /* JourneysViewController.swift */; };
+		620B28902136FAF000F8D6F4 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B288F2136FAF000F8D6F4 /* Journey.swift */; };
+		620B28942136FB7600F8D6F4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28932136FB7600F8D6F4 /* Coordinates.swift */; };
+		620B28962136FDFC00F8D6F4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28952136FDFC00F8D6F4 /* DatabaseManager.swift */; };
+		620B28982136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28972136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift */; };
+		620B289B2136FFE900F8D6F4 /* JourneyCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289A2136FFE900F8D6F4 /* JourneyCreater.swift */; };
+		620B289D2136FFF800F8D6F4 /* JourneyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */; };
+		620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */; };
+		C2EA54CF7971C8C1DDBFBE28 /* Pods_My_Journey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,16 @@
 		620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journeys.storyboard; sourceTree = "<group>"; };
 		620B28742135E33E00F8D6F4 /* MapTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewController.swift; sourceTree = "<group>"; };
 		620B28762135E34F00F8D6F4 /* JourneysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysViewController.swift; sourceTree = "<group>"; };
+		620B288F2136FAF000F8D6F4 /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		620B28932136FB7600F8D6F4 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		620B28952136FDFC00F8D6F4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		620B28972136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseManager+BasicOperations.swift"; sourceTree = "<group>"; };
+		620B289A2136FFE900F8D6F4 /* JourneyCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCreater.swift; sourceTree = "<group>"; };
+		620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyProvider.swift; sourceTree = "<group>"; };
+		620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseManager+Journey.swift"; sourceTree = "<group>"; };
+		A61131C216C3A0B5B854FCC9 /* Pods-My Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.release.xcconfig"; sourceTree = "<group>"; };
+		BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCDB54AD1C1282C576B70ACD /* Pods-My Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2EA54CF7971C8C1DDBFBE28 /* Pods_My_Journey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +67,8 @@
 			children = (
 				620B28552135DB0C00F8D6F4 /* My Journey */,
 				620B28542135DB0C00F8D6F4 /* Products */,
+				E3427E4BF6C8A3FFAC727247 /* Pods */,
+				A8D636B04B1F6CEE6DD22C91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +87,7 @@
 				620B28692135DB9800F8D6F4 /* Core */,
 				620B286A2135DBAC00F8D6F4 /* Screens */,
 				620B286B2135DBB400F8D6F4 /* Resources */,
+				620B28912136FAF500F8D6F4 /* Database */,
 			);
 			path = "My Journey";
 			sourceTree = "<group>";
@@ -132,6 +154,69 @@
 			path = Journeys;
 			sourceTree = "<group>";
 		};
+		620B28912136FAF500F8D6F4 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				620B28922136FAFD00F8D6F4 /* Objects */,
+				620B28992136FFD600F8D6F4 /* Base */,
+				620B28A02137032000F8D6F4 /* Creaters */,
+				620B28A12137032700F8D6F4 /* Providers */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		620B28922136FAFD00F8D6F4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				620B288F2136FAF000F8D6F4 /* Journey.swift */,
+				620B28932136FB7600F8D6F4 /* Coordinates.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		620B28992136FFD600F8D6F4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				620B28952136FDFC00F8D6F4 /* DatabaseManager.swift */,
+				620B28972136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift */,
+				620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		620B28A02137032000F8D6F4 /* Creaters */ = {
+			isa = PBXGroup;
+			children = (
+				620B289A2136FFE900F8D6F4 /* JourneyCreater.swift */,
+			);
+			path = Creaters;
+			sourceTree = "<group>";
+		};
+		620B28A12137032700F8D6F4 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		A8D636B04B1F6CEE6DD22C91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3427E4BF6C8A3FFAC727247 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCDB54AD1C1282C576B70ACD /* Pods-My Journey.debug.xcconfig */,
+				A61131C216C3A0B5B854FCC9 /* Pods-My Journey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 620B28652135DB0D00F8D6F4 /* Build configuration list for PBXNativeTarget "My Journey" */;
 			buildPhases = (
+				039A886E4F3A4320364FB30A /* [CP] Check Pods Manifest.lock */,
 				620B284F2135DB0C00F8D6F4 /* Sources */,
 				620B28502135DB0C00F8D6F4 /* Frameworks */,
 				620B28512135DB0C00F8D6F4 /* Resources */,
+				1BE4748902A2A1ACB1498DCF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,15 +287,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		039A886E4F3A4320364FB30A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Journey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BE4748902A2A1ACB1498DCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-My Journey/Pods-My Journey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-My Journey/Pods-My Journey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		620B284F2135DB0C00F8D6F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				620B28592135DB0C00F8D6F4 /* MainTabController.swift in Sources */,
+				620B289B2136FFE900F8D6F4 /* JourneyCreater.swift in Sources */,
+				620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */,
+				620B28982136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift in Sources */,
 				620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */,
 				620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */,
+				620B28942136FB7600F8D6F4 /* Coordinates.swift in Sources */,
 				620B28572135DB0C00F8D6F4 /* AppDelegate.swift in Sources */,
+				620B28902136FAF000F8D6F4 /* Journey.swift in Sources */,
+				620B28962136FDFC00F8D6F4 /* DatabaseManager.swift in Sources */,
+				620B289D2136FFF800F8D6F4 /* JourneyProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +485,7 @@
 		};
 		620B28662135DB0D00F8D6F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCDB54AD1C1282C576B70ACD /* Pods-My Journey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -368,6 +504,7 @@
 		};
 		620B28672135DB0D00F8D6F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A61131C216C3A0B5B854FCC9 /* Pods-My Journey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
