@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Journeys-->
         <scene sceneID="VY9-ml-EE7">
             <objects>
                 <viewController storyboardIdentifier="JourneysViewController" id="KNE-9s-caK" sceneMemberID="viewController">
@@ -29,10 +29,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2P0-hd-aph"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Journeys" image="baseline_list" id="YCI-6S-dcD"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZW-qb-1Af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78" y="96"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_list" width="18" height="18"/>
+    </resources>
 </document>

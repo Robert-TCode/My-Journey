@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map Tracking View Controller-->
+        <!--Map-->
         <scene sceneID="sCP-i0-KvY">
             <objects>
                 <viewController storyboardIdentifier="MapTrackingViewController" id="vOI-nO-YHZ" customClass="MapTrackingViewController" customModule="My_Journey" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mSn-qA-F84">
-                                <rect key="frame" x="0.0" y="89" width="375" height="578"/>
+                                <rect key="frame" x="0.0" y="155" width="375" height="463"/>
                             </mapView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Dc-5U-4L7">
                                 <rect key="frame" x="311" y="38" width="51" height="31"/>
@@ -33,21 +33,40 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrt-KX-c3f">
+                                <rect key="frame" x="318" y="119" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-Qd-m5C">
+                                <rect key="frame" x="241" y="119" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mSn-qA-F84" firstAttribute="top" secondItem="2Dc-5U-4L7" secondAttribute="bottom" constant="20" id="386-gk-u2I"/>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="bottom" secondItem="vz8-ZI-V5G" secondAttribute="bottom" id="6qc-SN-vA5"/>
                             <constraint firstItem="F2K-EE-7Zh" firstAttribute="top" secondItem="vz8-ZI-V5G" secondAttribute="top" constant="20" id="Oyu-JJ-68f"/>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" id="PJh-nb-u8d"/>
+                            <constraint firstItem="vz8-ZI-V5G" firstAttribute="trailing" secondItem="Wrt-KX-c3f" secondAttribute="trailing" constant="10" id="QPP-pl-LqX"/>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="trailing" secondItem="vz8-ZI-V5G" secondAttribute="trailing" id="TSG-Kp-RQ7"/>
                             <constraint firstItem="vz8-ZI-V5G" firstAttribute="trailing" secondItem="2Dc-5U-4L7" secondAttribute="trailing" constant="15" id="Tlr-U1-GgZ"/>
                             <constraint firstItem="2Dc-5U-4L7" firstAttribute="centerY" secondItem="F2K-EE-7Zh" secondAttribute="centerY" id="eUQ-tw-C84"/>
+                            <constraint firstItem="Wrt-KX-c3f" firstAttribute="centerY" secondItem="WKE-Qd-m5C" secondAttribute="centerY" id="jDE-JG-iAS"/>
+                            <constraint firstItem="Wrt-KX-c3f" firstAttribute="leading" secondItem="WKE-Qd-m5C" secondAttribute="trailing" constant="10" id="kJ8-ek-Kof"/>
+                            <constraint firstItem="Wrt-KX-c3f" firstAttribute="top" secondItem="2Dc-5U-4L7" secondAttribute="bottom" constant="50" id="mDy-fh-vyX"/>
                             <constraint firstItem="F2K-EE-7Zh" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" constant="15" id="pud-Aj-BAW"/>
+                            <constraint firstItem="mSn-qA-F84" firstAttribute="top" secondItem="WKE-Qd-m5C" secondAttribute="bottom" constant="15" id="zQy-hV-Pbc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vz8-ZI-V5G"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="baseline_map" id="tXc-hp-GPd"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="Wrt-KX-c3f" id="bN6-9G-F1S"/>
                         <outlet property="mapKitView" destination="mSn-qA-F84" id="kxV-PR-OcM"/>
                         <outlet property="trackingSwitch" destination="2Dc-5U-4L7" id="87x-yF-JL0"/>
                     </connections>
@@ -57,4 +76,7 @@
             <point key="canvasLocation" x="101.59999999999999" y="115.59220389805098"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_map" width="18" height="18"/>
+    </resources>
 </document>
