@@ -18,12 +18,14 @@ class JourneysViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let nib = UINib(nibName: "JourneysTableViewHeaderView", bundle: nil)
+        journeysTableView.register(nib, forHeaderFooterViewReuseIdentifier: "JourneysTableViewHeaderView")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         journeys = provider.getJourneys()
-        print(journeys)
         journeysTableView.reloadData()
     }
 }
@@ -48,5 +50,23 @@ extension JourneysViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // go to JourneyViewController
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JourneysTableViewHeaderView")
+                as? JourneysTableViewHeaderView
+            else {
+                preconditionFailure("Could not find JourneysTableViewHeaderView")
+        }
+        return header
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 65
     }
 }

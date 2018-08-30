@@ -148,7 +148,7 @@ extension MapTrackingViewController: CLLocationManagerDelegate {
 //            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
 //            self.mapKitView.setRegion(region, animated: true)
 
-//            zoomOn(location: location)
+            zoomOn(location: location)
             drawOnMap()
             oldCoordinates = location.coordinate
         }

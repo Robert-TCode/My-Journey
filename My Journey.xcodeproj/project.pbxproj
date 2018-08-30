@@ -24,6 +24,10 @@
 		620B289D2136FFF800F8D6F4 /* JourneyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */; };
 		620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */; };
 		620B28A321371A3200F8D6F4 /* JourneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */; };
+		620B28B3213885F000F8D6F4 /* JourneysTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620B28B2213885F000F8D6F4 /* JourneysTableViewHeaderView.xib */; };
+		620B28B5213886AA00F8D6F4 /* JourneysTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28B4213886AA00F8D6F4 /* JourneysTableViewHeaderView.swift */; };
+		620B28B921388BAA00F8D6F4 /* Journey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B28B821388BAA00F8D6F4 /* Journey.storyboard */; };
+		620B28BB21388BBF00F8D6F4 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28BA21388BBF00F8D6F4 /* JourneyViewController.swift */; };
 		C2EA54CF7971C8C1DDBFBE28 /* Pods_My_Journey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,10 @@
 		620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyProvider.swift; sourceTree = "<group>"; };
 		620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseManager+Journey.swift"; sourceTree = "<group>"; };
 		620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTableViewCell.swift; sourceTree = "<group>"; };
+		620B28B2213885F000F8D6F4 /* JourneysTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneysTableViewHeaderView.xib; sourceTree = "<group>"; };
+		620B28B4213886AA00F8D6F4 /* JourneysTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysTableViewHeaderView.swift; sourceTree = "<group>"; };
+		620B28B821388BAA00F8D6F4 /* Journey.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journey.storyboard; sourceTree = "<group>"; };
+		620B28BA21388BBF00F8D6F4 /* JourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
 		A61131C216C3A0B5B854FCC9 /* Pods-My Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.release.xcconfig"; sourceTree = "<group>"; };
 		BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDB54AD1C1282C576B70ACD /* Pods-My Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +117,7 @@
 				620B28712135E27A00F8D6F4 /* Main */,
 				620B28722135E28300F8D6F4 /* Map */,
 				620B28732135E28B00F8D6F4 /* Journeys */,
+				620B28BC21388BC600F8D6F4 /* Journey */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -152,7 +161,8 @@
 			children = (
 				620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */,
 				620B28762135E34F00F8D6F4 /* JourneysViewController.swift */,
-				620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */,
+				620B28B7213886D100F8D6F4 /* Cell */,
+				620B28B6213886C700F8D6F4 /* Header */,
 			);
 			path = Journeys;
 			sourceTree = "<group>";
@@ -201,6 +211,32 @@
 				620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		620B28B6213886C700F8D6F4 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				620B28B2213885F000F8D6F4 /* JourneysTableViewHeaderView.xib */,
+				620B28B4213886AA00F8D6F4 /* JourneysTableViewHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		620B28B7213886D100F8D6F4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		620B28BC21388BC600F8D6F4 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				620B28B821388BAA00F8D6F4 /* Journey.storyboard */,
+				620B28BA21388BBF00F8D6F4 /* JourneyViewController.swift */,
+			);
+			path = Journey;
 			sourceTree = "<group>";
 		};
 		A8D636B04B1F6CEE6DD22C91 /* Frameworks */ = {
@@ -280,8 +316,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620B28B3213885F000F8D6F4 /* JourneysTableViewHeaderView.xib in Resources */,
 				620B28612135DB0D00F8D6F4 /* LaunchScreen.storyboard in Resources */,
 				620B285E2135DB0D00F8D6F4 /* Assets.xcassets in Resources */,
+				620B28B921388BAA00F8D6F4 /* Journey.storyboard in Resources */,
 				620B286D2135DF4900F8D6F4 /* MapTracking.storyboard in Resources */,
 				620B286F2135DFFB00F8D6F4 /* Journeys.storyboard in Resources */,
 				620B285C2135DB0C00F8D6F4 /* Main.storyboard in Resources */,
@@ -337,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				620B28592135DB0C00F8D6F4 /* MainTabController.swift in Sources */,
+				620B28BB21388BBF00F8D6F4 /* JourneyViewController.swift in Sources */,
 				620B289B2136FFE900F8D6F4 /* JourneyCreater.swift in Sources */,
 				620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */,
 				620B28982136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift in Sources */,
@@ -345,6 +384,7 @@
 				620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */,
 				620B28942136FB7600F8D6F4 /* Coordinates.swift in Sources */,
 				620B28572135DB0C00F8D6F4 /* AppDelegate.swift in Sources */,
+				620B28B5213886AA00F8D6F4 /* JourneysTableViewHeaderView.swift in Sources */,
 				620B28902136FAF000F8D6F4 /* Journey.swift in Sources */,
 				620B28962136FDFC00F8D6F4 /* DatabaseManager.swift in Sources */,
 				620B289D2136FFF800F8D6F4 /* JourneyProvider.swift in Sources */,
