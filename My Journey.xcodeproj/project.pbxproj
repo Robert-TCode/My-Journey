@@ -23,6 +23,7 @@
 		620B289B2136FFE900F8D6F4 /* JourneyCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289A2136FFE900F8D6F4 /* JourneyCreater.swift */; };
 		620B289D2136FFF800F8D6F4 /* JourneyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */; };
 		620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */; };
+		620B28A321371A3200F8D6F4 /* JourneyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */; };
 		C2EA54CF7971C8C1DDBFBE28 /* Pods_My_Journey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		620B289A2136FFE900F8D6F4 /* JourneyCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCreater.swift; sourceTree = "<group>"; };
 		620B289C2136FFF800F8D6F4 /* JourneyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyProvider.swift; sourceTree = "<group>"; };
 		620B289E2137020300F8D6F4 /* DatabaseManager+Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseManager+Journey.swift"; sourceTree = "<group>"; };
+		620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTableViewCell.swift; sourceTree = "<group>"; };
 		A61131C216C3A0B5B854FCC9 /* Pods-My Journey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.release.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.release.xcconfig"; sourceTree = "<group>"; };
 		BED38306C5B78D722466DD90 /* Pods_My_Journey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Journey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDB54AD1C1282C576B70ACD /* Pods-My Journey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Journey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My Journey/Pods-My Journey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */,
 				620B28762135E34F00F8D6F4 /* JourneysViewController.swift */,
+				620B28A221371A3200F8D6F4 /* JourneyTableViewCell.swift */,
 			);
 			path = Journeys;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				620B289B2136FFE900F8D6F4 /* JourneyCreater.swift in Sources */,
 				620B289F2137020300F8D6F4 /* DatabaseManager+Journey.swift in Sources */,
 				620B28982136FF5D00F8D6F4 /* DatabaseManager+BasicOperations.swift in Sources */,
+				620B28A321371A3200F8D6F4 /* JourneyTableViewCell.swift in Sources */,
 				620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */,
 				620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */,
 				620B28942136FB7600F8D6F4 /* Coordinates.swift in Sources */,

@@ -10,11 +10,9 @@ import Foundation
 import RealmSwift
 
 public class DatabaseManager {
-    public static var shared: DatabaseManager?
+    public static var shared = DatabaseManager()
 
-    private init() {
-        DatabaseManager.shared = DatabaseManager()
-    }
+    private init() { }
 
     var realm: Realm! {
         do {

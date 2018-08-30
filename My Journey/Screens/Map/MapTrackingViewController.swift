@@ -83,8 +83,8 @@ class MapTrackingViewController: UIViewController {
         }
         let polyline = MKPolyline(coordinates: [source, destination], count: 2)
         self.mapKitView.add(polyline, level: .aboveRoads)
-        let routeRect = polyline.boundingMapRect
-        self.mapKitView.setRegion(MKCoordinateRegionForMapRect(routeRect), animated: true)
+//        let routeRect = polyline.boundingMapRect
+//        self.mapKitView.setRegion(MKCoordinateRegionForMapRect(routeRect), animated: true)
 
         let sourceLocation = CLLocation(latitude: source.latitude, longitude: source.longitude)
         let destinationLocation = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
@@ -104,12 +104,17 @@ class MapTrackingViewController: UIViewController {
                         longitude: $0.longitude)
         }
         let duration = endTimestamp - startTimestamp
+        let distanceRaw = String(format: "%.2f", distance / 100.0)
+        let journeyDistance = Double(distanceRaw)
+        // handle this better later
         let journey = Journey(uuid: UUID().uuidString,
                               date: Date().timeIntervalSince1970,
                               duration: duration,
-                              totalDistance: distance,
+                              totalDistance: journeyDistance!,
                               coorinatesArray: coordinates)
-        creater.createJourney(journey) { }
+        creater.createJourney(journey) {
+            print("Journey added to database")
+        }
 
         coordinatesArray.removeAll()
         distance = 0
@@ -139,7 +144,11 @@ extension MapTrackingViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         mapKitView.showsUserLocation = true
         if let location = locations.last {
-            zoomOn(location: location)
+//            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//            self.mapKitView.setRegion(region, animated: true)
+
+//            zoomOn(location: location)
             drawOnMap()
             oldCoordinates = location.coordinate
         }

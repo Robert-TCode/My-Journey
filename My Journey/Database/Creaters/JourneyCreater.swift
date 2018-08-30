@@ -17,10 +17,7 @@ public class JourneyCreater: JourneyCreating {
     public init() { }
 
     public func createJourney(_ journey: Journey, completion: @escaping () -> Void) {
-        guard let database = DatabaseManager.shared else {
-            completion()
-            return
-        }
+        let database = DatabaseManager.shared
         database.add(journey) {
             completion()
         }

@@ -18,12 +18,12 @@ public class JourneyProvider: JourneyProviding {
     public init () { }
 
     public func getJourneys() -> [Journey] {
-        guard let database = DatabaseManager.shared else { return [] }
+        let database = DatabaseManager.shared
         return database.getJourneys()
     }
 
     public func getJourney(withUUID uuid: String) -> Journey? {
-        guard let database = DatabaseManager.shared else { return nil }
+        let database = DatabaseManager.shared
         return database.getJourney(withUUID: uuid)
     }
 }

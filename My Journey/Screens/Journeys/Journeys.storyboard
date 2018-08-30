@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
         <!--Journeys-->
         <scene sceneID="VY9-ml-EE7">
             <objects>
-                <viewController storyboardIdentifier="JourneysViewController" id="KNE-9s-caK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JourneysViewController" id="KNE-9s-caK" customClass="JourneysViewController" customModule="My_Journey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eaL-5B-VDT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,15 +23,52 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="117" id="uEH-hl-og0">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="117"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JourneyTableViewCell" rowHeight="65" id="uEH-hl-og0" customClass="JourneyTableViewCell" customModule="My_Journey" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uEH-hl-og0" id="7I0-zB-EHv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-2X-V03">
+                                                    <rect key="frame" x="35" y="22" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3u-vd-IyS">
+                                                    <rect key="frame" x="273" y="22" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-R0-X4P">
+                                                    <rect key="frame" x="168.5" y="22" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Y3u-vd-IyS" secondAttribute="trailing" constant="20" id="8WL-Cz-Z2c"/>
+                                                <constraint firstItem="JgN-2X-V03" firstAttribute="centerY" secondItem="7I0-zB-EHv" secondAttribute="centerY" id="Bpz-Eu-ALA"/>
+                                                <constraint firstItem="UsE-R0-X4P" firstAttribute="centerX" secondItem="7I0-zB-EHv" secondAttribute="centerX" id="DhK-uo-lmp"/>
+                                                <constraint firstItem="JgN-2X-V03" firstAttribute="leading" secondItem="7I0-zB-EHv" secondAttribute="leadingMargin" constant="20" id="MNx-rU-VBH"/>
+                                                <constraint firstItem="Y3u-vd-IyS" firstAttribute="centerY" secondItem="JgN-2X-V03" secondAttribute="centerY" id="XeK-v0-ICS"/>
+                                                <constraint firstItem="UsE-R0-X4P" firstAttribute="centerY" secondItem="JgN-2X-V03" secondAttribute="centerY" id="j4S-gx-bKO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="JgN-2X-V03" id="8AI-jE-kfg"/>
+                                            <outlet property="distanceLabel" destination="Y3u-vd-IyS" id="X69-Pt-aiO"/>
+                                            <outlet property="timeLabel" destination="UsE-R0-X4P" id="gy3-TR-jBi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KNE-9s-caK" id="H3E-bh-kFo"/>
+                                    <outlet property="delegate" destination="KNE-9s-caK" id="6W1-Ki-MeW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,6 +82,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Journeys" image="baseline_list" id="YCI-6S-dcD"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="journeysTableView" destination="SM4-el-SId" id="46n-GB-F2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZW-qb-1Af" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
