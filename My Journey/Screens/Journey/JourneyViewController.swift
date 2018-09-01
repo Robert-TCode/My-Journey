@@ -34,22 +34,15 @@ class JourneyViewController: UIViewController {
     }
     
     private func updateLabels() {
-        let dataFormatter = DateFormatter()
-        dataFormatter.dateFormat = "MMM dd, yyy"
         var date = Date(timeIntervalSince1970: journey.date)
-        var stringDate = dataFormatter.string(from: date)
-        dateLabel.text = stringDate
+        dateLabel.text = date.convertToString(inFormat: .calendar)
         
-        dataFormatter.dateFormat = "HH:mm:ss"
         date = Date(timeIntervalSince1970: journey.startTimestamp)
-        stringDate = dataFormatter.string(from: date)
-        startTimeLabel.text = stringDate
+        startTimeLabel.text = date.convertToString(inFormat: .time)
         date = Date(timeIntervalSince1970: journey.endTimestamp)
-        stringDate = dataFormatter.string(from: date)
-        endTimeLabel.text = stringDate
+        endTimeLabel.text = date.convertToString(inFormat: .time)
         
-        let truncatedDistance = String(format: "%.2f", journey.totalDistance / 1000.0)
-        totalDistanceLabel.text = "\(truncatedDistance) km"
+        totalDistanceLabel.text = "\((journey.totalDistance / 1000.0).roundToDecimal(2)) km"
         averageSpeedLabel.text = "\(journey.averageSpeed) km/h"
     }
     
