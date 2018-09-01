@@ -23,6 +23,7 @@ public enum DateStringFormat {
 }
 
 public extension Date {
+    // Method used to convert a date in different string formats
     func convertToString(inFormat format: DateStringFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.dateFormat

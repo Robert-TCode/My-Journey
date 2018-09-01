@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57645B44213B05B600EFCE44 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57645B43213B05B600EFCE44 /* Double+Extension.swift */; };
 		57645B47213B08D100EFCE44 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57645B46213B08D100EFCE44 /* Date+Extension.swift */; };
+		57645B49213B163600EFCE44 /* JourneysNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57645B48213B163600EFCE44 /* JourneysNavigationController.swift */; };
 		620B28572135DB0C00F8D6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28562135DB0C00F8D6F4 /* AppDelegate.swift */; };
 		620B28592135DB0C00F8D6F4 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B28582135DB0C00F8D6F4 /* MainTabController.swift */; };
 		620B285C2135DB0C00F8D6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620B285A2135DB0C00F8D6F4 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		57645B43213B05B600EFCE44 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		57645B46213B08D100EFCE44 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		57645B48213B163600EFCE44 /* JourneysNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneysNavigationController.swift; sourceTree = "<group>"; };
 		620B28532135DB0C00F8D6F4 /* My Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		620B28562135DB0C00F8D6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		620B28582135DB0C00F8D6F4 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				620B286E2135DFFB00F8D6F4 /* Journeys.storyboard */,
 				620B28762135E34F00F8D6F4 /* JourneysViewController.swift */,
+				57645B48213B163600EFCE44 /* JourneysNavigationController.swift */,
 				620B28B7213886D100F8D6F4 /* Cell */,
 				620B28B6213886C700F8D6F4 /* Header */,
 			);
@@ -396,6 +399,7 @@
 				57645B47213B08D100EFCE44 /* Date+Extension.swift in Sources */,
 				620B28A321371A3200F8D6F4 /* JourneyTableViewCell.swift in Sources */,
 				620B28772135E34F00F8D6F4 /* JourneysViewController.swift in Sources */,
+				57645B49213B163600EFCE44 /* JourneysNavigationController.swift in Sources */,
 				620B28752135E33E00F8D6F4 /* MapTrackingViewController.swift in Sources */,
 				57645B44213B05B600EFCE44 /* Double+Extension.swift in Sources */,
 				620B28942136FB7600F8D6F4 /* Coordinates.swift in Sources */,

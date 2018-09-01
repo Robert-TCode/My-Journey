@@ -25,6 +25,7 @@ class JourneysViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         journeys = provider.getJourneys()
         journeysTableView.reloadData()
     }
@@ -59,7 +60,7 @@ extension JourneysViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return 50
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -69,6 +70,8 @@ extension JourneysViewController: UITableViewDataSource, UITableViewDelegate {
             else {
                 preconditionFailure("Could not find JourneysTableViewHeaderView")
         }
+        header.translatesAutoresizingMaskIntoConstraints = true
+        
         return header
     }
 

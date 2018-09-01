@@ -29,6 +29,11 @@ class JourneyViewController: UIViewController {
         drawPathOnMap()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     func configure(withJourney journey: Journey) {
         self.journey = journey
     }
@@ -46,6 +51,10 @@ class JourneyViewController: UIViewController {
         averageSpeedLabel.text = "\(journey.averageSpeed) km/h"
     }
     
+    /*
+     Method used to draw paths between every consecutive coordinates of the journey
+     and moving map's camera on the first one
+     */
     private func drawPathOnMap() {
         let coordinates = journey.coordinatesArray
         if coordinates.count < 2 {

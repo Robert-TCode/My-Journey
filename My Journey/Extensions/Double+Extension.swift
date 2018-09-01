@@ -9,6 +9,7 @@
 import Foundation
 
 public extension Double {
+    // Method used for truncate a double number to a specific number of decimals
     func roundToDecimal(_ fractionDigits: Int) -> Double {
         let multiplier = pow(10, Double(fractionDigits))
         return Darwin.round(self * multiplier) / multiplier

@@ -10,6 +10,14 @@ import Foundation
 import MapKit
 import UIKit
 
+
+/*
+    UI slows down a lot because of location manager updating process
+    There were been tried multiple solution with DeferredLocationUpdates, MonitoringSignificantLocationChanges,
+    not displaying user's location on map and other
+    Still searching for a better solution 
+ */
+
 class MapTrackingViewController: UIViewController {
     
     @IBOutlet weak var trackingSwitch: UISwitch!
@@ -73,6 +81,13 @@ class MapTrackingViewController: UIViewController {
         checkLocationServiceAuthenticationStatus()
     }
 
+    /*
+     LocationManager is configured for a better and efficient usage in the following cases:
+     - user runs the app in background and the battery consumption in reduced
+     - user runs the app in foreground and location has a good accuracy
+     - user stops moving and the app detects this and pause / start updating location
+     - user uses app while driving or moving long distances
+     */
     fileprivate func setupLocationManager() {
         locationManager.delegate = self
         locationManager.allowsBackgroundLocationUpdates = true
@@ -126,14 +141,28 @@ class MapTrackingViewController: UIViewController {
         startTimestamp = Date().timeIntervalSince1970
     }
 
+    /*
+     Once app goes to background, to reduce power consumption,
+     location manager continues to monitorize only significant location changes
+     */
     @objc func appMovedToBackground() {
         locationManager.stopUpdatingLocation()
     }
     
+    /*
+     Once app goes to foreground, for higher accuracy,
+     location manager starts to monitorize every location updates, not only the significant ones
+     */
     @objc func appMovedToForeground() {
-        locationManager.startUpdatingLocation()
+        if tracking {
+            locationManager.startUpdatingLocation()
+        }
     }
     
+    /*
+     Method called whenever a jouney is ended (finish tracking)
+     Add journey to database and reset distance, speed and coordinates array
+     */
     private func saveJourney() {
         if coordinatesArray.isEmpty {
             print("Attempt to save empty journey")
@@ -174,6 +203,9 @@ extension MapTrackingViewController {
 
 // MARK: Map Methods
 extension MapTrackingViewController {
+    /*
+     Method called to move the map "camera" to a desired location
+     */
     private func zoomOn(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 3.0,
@@ -181,26 +213,34 @@ extension MapTrackingViewController {
         mapKitView.setRegion(coordinateRegion, animated: true)
     }
     
+    /*
+     Method called everytime user's location is updated in order to draw the path between coordinates,
+     save them, increase total distance and calculate the speed
+     */
     private func drawOnMap() {
         guard let source = oldCoordinates,
             let destination = locationManager.location?.coordinate else {
                 return
         }
+        
+        // Add the path between last 2 coordinates
         let polyline = MKPolyline(coordinates: [source, destination], count: 2)
         self.mapKitView.add(polyline, level: .aboveRoads)
         
+        // Calculate the distance between last 2 coordinates and add it to total distance
         let sourceLocation = CLLocation(latitude: source.latitude, longitude: source.longitude)
         let destinationLocation = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
         let distanceInMeters = destinationLocation.distance(from: sourceLocation)
         distance += distanceInMeters
         
-        // instant speed calculation
+        // Calculate instant speed between last 2 coordinates
         if let lastCoordinate = coordinatesArray.last {
             let time = Date().timeIntervalSince1970 - lastCoordinate.timestamp
             let metersPerSecond = distanceInMeters / time
             instantSpeed = metersPerSecond * 3.6
         }
         
+        // Add new coordinate to array
         if coordinatesArray.isEmpty {
             let sourceCoordinates = Coordinates(uuid: UUID().uuidString,
                                                 timestamp: Date().timeIntervalSince1970,
