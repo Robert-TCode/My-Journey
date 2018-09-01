@@ -49,7 +49,13 @@ extension JourneysViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // go to JourneyViewController
+        let storyboard = UIStoryboard(name: "Journey", bundle: nil)
+        guard let journeyViewController = storyboard.instantiateViewController(withIdentifier: "JourneyViewController") as? JourneyViewController else {
+            print("Could not instantiate JourneyViewController")
+            return
+        }
+        journeyViewController.configure(withJourney: journeys[indexPath.row])
+        self.navigationController?.pushViewController(journeyViewController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

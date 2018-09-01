@@ -45,16 +45,32 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43a-1R-zHd">
+                                <rect key="frame" x="15" y="119" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--- km / h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-gS-gKZ">
+                                <rect key="frame" x="73" y="119" width="74.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="bottom" secondItem="vz8-ZI-V5G" secondAttribute="bottom" id="6qc-SN-vA5"/>
+                            <constraint firstItem="QER-gS-gKZ" firstAttribute="leading" secondItem="43a-1R-zHd" secondAttribute="trailing" constant="8" id="OsH-41-zv2"/>
                             <constraint firstItem="F2K-EE-7Zh" firstAttribute="top" secondItem="vz8-ZI-V5G" secondAttribute="top" constant="20" id="Oyu-JJ-68f"/>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" id="PJh-nb-u8d"/>
                             <constraint firstItem="vz8-ZI-V5G" firstAttribute="trailing" secondItem="Wrt-KX-c3f" secondAttribute="trailing" constant="10" id="QPP-pl-LqX"/>
+                            <constraint firstItem="43a-1R-zHd" firstAttribute="leading" secondItem="vz8-ZI-V5G" secondAttribute="leading" constant="15" id="Sh9-B4-oSg"/>
                             <constraint firstItem="mSn-qA-F84" firstAttribute="trailing" secondItem="vz8-ZI-V5G" secondAttribute="trailing" id="TSG-Kp-RQ7"/>
                             <constraint firstItem="vz8-ZI-V5G" firstAttribute="trailing" secondItem="2Dc-5U-4L7" secondAttribute="trailing" constant="15" id="Tlr-U1-GgZ"/>
                             <constraint firstItem="2Dc-5U-4L7" firstAttribute="centerY" secondItem="F2K-EE-7Zh" secondAttribute="centerY" id="eUQ-tw-C84"/>
+                            <constraint firstItem="WKE-Qd-m5C" firstAttribute="centerY" secondItem="43a-1R-zHd" secondAttribute="centerY" id="fzh-ep-MKs"/>
+                            <constraint firstItem="QER-gS-gKZ" firstAttribute="centerY" secondItem="43a-1R-zHd" secondAttribute="centerY" id="iW3-5U-FG8"/>
                             <constraint firstItem="Wrt-KX-c3f" firstAttribute="centerY" secondItem="WKE-Qd-m5C" secondAttribute="centerY" id="jDE-JG-iAS"/>
                             <constraint firstItem="Wrt-KX-c3f" firstAttribute="leading" secondItem="WKE-Qd-m5C" secondAttribute="trailing" constant="10" id="kJ8-ek-Kof"/>
                             <constraint firstItem="Wrt-KX-c3f" firstAttribute="top" secondItem="2Dc-5U-4L7" secondAttribute="bottom" constant="50" id="mDy-fh-vyX"/>
@@ -66,6 +82,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="baseline_map" id="tXc-hp-GPd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="currentSpeedLabel" destination="QER-gS-gKZ" id="lKd-CV-RYf"/>
                         <outlet property="distanceLabel" destination="Wrt-KX-c3f" id="bN6-9G-F1S"/>
                         <outlet property="mapKitView" destination="mSn-qA-F84" id="kxV-PR-OcM"/>
                         <outlet property="trackingSwitch" destination="2Dc-5U-4L7" id="87x-yF-JL0"/>

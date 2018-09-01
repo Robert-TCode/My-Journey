@@ -15,9 +15,10 @@ class JourneyTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
 
     func configure(withJourney journey: Journey) {
-        let truncatedDistance = String(format: "%.2f",
-                                     journey.totalDistance)
-        let truncatedDurationInSeconds = Int(journey.duration / 1000.0)
+        let truncatedDistance = String(format: "%.2f", journey.totalDistance / 1000.0)
+        distanceLabel.text = "\(truncatedDistance) km"
+        
+        let truncatedDurationInSeconds = Int(journey.duration)
         let hours = truncatedDurationInSeconds / 3600
         let mins = (truncatedDurationInSeconds - (hours * 3600)) / 60
         let sec = truncatedDurationInSeconds - (hours * 3600) - (mins * 60)
@@ -27,6 +28,6 @@ class JourneyTableViewCell: UITableViewCell {
         let stringDate = dateFormatter.string(from: Date(timeIntervalSince1970: journey.date))
         dateLabel.text = stringDate
         timeLabel.text = "\(hours)h \(mins)mins \(sec) sec"
-        distanceLabel.text = "\(truncatedDistance) mi"
+        
     }
 }

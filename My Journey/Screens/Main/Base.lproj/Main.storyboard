@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="992" y="-208"/>
         </scene>
-        <!--JourneysViewController-->
+        <!--JourneysNavigationController-->
         <scene sceneID="XSF-7r-PHh">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Journeys" storyboardName="Journeys" referencedIdentifier="JourneysViewController" id="r2U-ER-BZc" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Journeys" storyboardName="Journeys" referencedIdentifier="JourneysNavigationController" id="r2U-ER-BZc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Journeys" image="baseline_list" id="a8O-F5-0gL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sR6-P8-skd" userLabel="First Responder" sceneMemberID="firstResponder"/>
